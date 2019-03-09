@@ -1,5 +1,7 @@
 package www.kidscorner.com.service;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +31,7 @@ public class UserService {
 	public void saveUser(User user, String roleType) {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		Role role = roleRepository.findByRoleType(roleType);
-		Set<Role> roles = user.getRoles();
-		roles.add(role);
-		user.setRoles(roles);
+		user.setRoles(new HashSet<Role>(Arrays.asList(role)));
 		userRepository.save(user);
 	}
 }

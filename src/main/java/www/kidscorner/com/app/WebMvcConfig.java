@@ -17,9 +17,9 @@ public class WebMvcConfig extends WebSecurityConfigurerAdapter{
 	private BCryptPasswordEncoder passwordEncoder;
 	@Autowired
 	private DataSource dataSource;
-	@Value("$.spring.sql.user-query")
+	@Value("${spring.sql.users-query}")
 	private String userQuery;
-	@Value("$..spring.sql.role-query")
+	@Value("${spring.sql.roles-query}")
 	private String roleQuery;
 	
 	@Override
