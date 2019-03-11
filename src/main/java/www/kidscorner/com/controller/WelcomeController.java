@@ -15,4 +15,25 @@ public class WelcomeController {
 		model.addAttribute("name", name);
 		return "welcomePage";
 	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.GET )
+	public String getLogin(@RequestParam("name") String name, 
+			Model model) {
+		model.addAttribute("name", name);
+		return "login";
+	}
+	
+	@RequestMapping(value = "user/welcome", method = RequestMethod.GET )
+	public String getUserWelcome(@RequestParam("name") String name, 
+			Model model) {
+		model.addAttribute("name", name);
+		return "userWelcome";
+	}
+	
+	@RequestMapping(value = "admin/welcome", method = RequestMethod.GET )
+	public String getAdminWelcome(@RequestParam("name") String name, 
+			Model model) {
+		model.addAttribute("name", name);
+		return "adminWelcome";
+	}
 }
