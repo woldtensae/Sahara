@@ -17,23 +17,24 @@ public class WelcomeController {
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.GET )
-	public String getLogin(@RequestParam("name") String name, 
-			Model model) {
-		model.addAttribute("name", name);
+	public String getLogin() {
+		
 		return "login";
 	}
 	
+	@RequestMapping(value = "/reg", method = RequestMethod.GET )
+	public String getRegistration() {
+		
+		return "reg";
+	}
+	
 	@RequestMapping(value = "user/welcome", method = RequestMethod.GET )
-	public String getUserWelcome(@RequestParam("name") String name, 
-			Model model) {
-		model.addAttribute("name", name);
+	public String getUserWelcome() {
 		return "userWelcome";
 	}
 	
 	@RequestMapping(value = "admin/welcome", method = RequestMethod.GET )
-	public String getAdminWelcome(@RequestParam("name") String name, 
-			Model model) {
-		model.addAttribute("name", name);
+	public String getAdminWelcome() {
 		return "adminWelcome";
 	}
 }
