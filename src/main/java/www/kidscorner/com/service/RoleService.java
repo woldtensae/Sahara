@@ -10,9 +10,11 @@ import www.kidscorner.com.repository.RoleRepository;
 public class RoleService {
 	
 	@Autowired
-	RoleRepository roleRepository;
+	private RoleRepository roleRepository;
 	
 	public Role getRole(String roleType) {
 		return roleRepository.findByRoleType(roleType);
 	}
 }
+
+

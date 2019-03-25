@@ -9,3 +9,4 @@ import www.kidscorner.com.domain.Role;
 public interface RoleRepository extends CrudRepository<Long, Role>{
 	Role findByRoleType(String roleType);
 }
+ 

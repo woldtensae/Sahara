@@ -31,9 +31,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	private String roleQuery; 
 	
 	
-	@Override
+
 	@Autowired
-	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+	public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userService)
 			.passwordEncoder(passwordEncoder);
 		
