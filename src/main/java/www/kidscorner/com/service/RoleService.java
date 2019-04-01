@@ -1,5 +1,7 @@
 package www.kidscorner.com.service;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -7,6 +9,7 @@ import www.kidscorner.com.domain.Role;
 import www.kidscorner.com.repository.RoleRepository;
 
 @Service
+@Transactional
 public class RoleService {
 	
 	@Autowired

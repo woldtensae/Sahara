@@ -3,6 +3,8 @@ package www.kidscorner.com.service;
 import java.util.Arrays;
 import java.util.HashSet;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,6 +19,7 @@ import www.kidscorner.com.repository.RoleRepository;
 import www.kidscorner.com.repository.UserRepository;
 
 @Service
+@Transactional
 public class UserService implements UserDetailsService{
 	
 	private UserRepository userRepository;
@@ -35,8 +38,10 @@ public class UserService implements UserDetailsService{
 	
 	public void saveUser(User user, String roleType) {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
-		Role role = roleRepository.findByRoleType(roleType);
-		user.setRoles(new HashSet<Role>(Arrays.asList(role)));
+		
+		 Role role = roleRepository.findByRoleType(roleType); user.setRoles(new
+		 HashSet<Role>(Arrays.asList(role)));
+		 
 		userRepository.save(user);
 	}
 

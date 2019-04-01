@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class WelcomeController {
 	
-	
 
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public String welcome() {
@@ -22,8 +21,8 @@ public class WelcomeController {
 
 	@RequestMapping(value = "/reg", method = RequestMethod.GET)
 	public String getRegistration() {
-
 		return "reg";
+		
 	}
 
 	@RequestMapping(value = "user/welcome", method = RequestMethod.GET)

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import www.kidscorner.com.domain.Role;
 
 @Repository
-public interface RoleRepository extends CrudRepository<Long, Role>{
+public interface RoleRepository extends CrudRepository<Role, Long>{
 	Role findByRoleType(String roleType);
 }
  

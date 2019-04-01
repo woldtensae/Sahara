@@ -22,11 +22,13 @@ public class User {
 	private String username;
 	@Column(name="user_password")
 	private String password;
-	@ManyToMany(fetch=FetchType.LAZY)
-	@JoinTable(name="user_role", joinColumns = 
-				@JoinColumn(name="user_id"), inverseJoinColumns =
-				@JoinColumn(name="role_id"))
-	Set<Role> roles;
+
+	 @ManyToMany(fetch=FetchType.LAZY)
+	 @JoinTable(name="user_role", joinColumns =
+	 @JoinColumn(name="user_id"), inverseJoinColumns =
+	 @JoinColumn(name="role_id"))
+	 Set<Role> roles;
+	 
 	public Long getId() {
 		return id;
 	}
@@ -45,12 +47,11 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Set<Role> getRoles() {
-		return roles;
-	}
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
+	
+	public Set<Role> getRoles() { return roles; }
+	public void setRoles(Set<Role>
+	roles) { this.roles = roles; }
+	 
 	
 	
 }

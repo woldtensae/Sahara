@@ -4,12 +4,11 @@ import java.util.Collection;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.stereotype.Component;
 
 import www.kidscorner.com.domain.User;
 
-@Component
-public class MyUserPrincipal extends User implements UserDetails {
+
+public class MyUserPrincipal  implements UserDetails {
 	
 
 	private static final long serialVersionUID = 1L;
@@ -39,16 +38,6 @@ public class MyUserPrincipal extends User implements UserDetails {
 		return null;
 	}
 
-	@Override
-	public String getPassword() {
-		return super.getPassword();
-	}
-
-	@Override
-	public String getUsername() {
-		
-		return super.getUsername();
-	}
 
 	@Override
 	public boolean isAccountNonExpired() {
@@ -72,6 +61,20 @@ public class MyUserPrincipal extends User implements UserDetails {
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+
+
+	@Override
+	public String getPassword() {
+		return user.getPassword();
+	}
+
+
+
+	@Override
+	public String getUsername() {
+		return user.getUsername();
 	}
 
 }

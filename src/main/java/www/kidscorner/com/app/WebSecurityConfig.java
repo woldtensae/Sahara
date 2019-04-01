@@ -1,7 +1,6 @@
 package www.kidscorner.com.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -25,10 +24,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 	
-	@Value("${spring.sql.users-query}")
-	private String userQuery;
-	@Value("${spring.sql.roles-query}")
-	private String roleQuery; 
+	/*
+	 * @Value("${spring.sql.users-query}") private String userQuery;
+	 * 
+	 * @Value("${spring.sql.roles-query}") private String roleQuery;
+	 */ 
 	
 	
 
@@ -60,13 +60,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 			.anyRequest().authenticated()
 			.and().csrf().disable()
 			.formLogin()
-			.loginPage("/login")
+			//.loginPage("/login")
 			.failureUrl("/failuer")
 			.defaultSuccessUrl("/home");
 	}
 	
-	@Autowired
-	public void configure(WebSecurity web) {
+	@Override
+	public void configure(WebSecurity web) throws Exception{
 		web.ignoring().antMatchers("/resources/**");
 	}
 }

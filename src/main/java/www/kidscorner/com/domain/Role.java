@@ -10,11 +10,14 @@ import javax.persistence.Id;
 public class Role {
 	
 	@Id 
-	@Column(name="role_id")
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(name="role_id")
 	private Long id;
+	
 	@Column(name="user_role")
 	private String roleType;
+	
+	
 	public Long getId() {
 		return id;
 	}
