@@ -1,10 +1,14 @@
 package www.kidscorner.com.app;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import www.kidscorner.com.domain.Role;
 import www.kidscorner.com.domain.User;
 
 
@@ -34,33 +38,37 @@ public class MyUserPrincipal  implements UserDetails {
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
+		Collection<GrantedAuthority> rolesAsGrandAuthority = new HashSet<GrantedAuthority>();
+		Set<Role> rolesAsSet = user.getRoles();
+		rolesAsSet.forEach((e) -> {
+			rolesAsGrandAuthority.add(new SimpleGrantedAuthority(e.getRoleType()));
+		});
+		return rolesAsGrandAuthority;
 	}
 
 
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 

@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 import www.kidscorner.com.repository.UserRepository;
 import www.kidscorner.com.service.UserService;
@@ -23,6 +24,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	private UserService userService;
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
+	@Autowired
+	private AuthenticationSuccessHandler authenticationSuccessHandler;
 	
 	/*
 	 * @Value("${spring.sql.users-query}") private String userQuery;
@@ -52,17 +55,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
+		http.csrf().disable().cors().disable().authorizeRequests()
 			.antMatchers("/login").permitAll()
 			.antMatchers("/reg").permitAll()
 			.antMatchers("/user/**").hasRole("USER")
 			.antMatchers("/admin/**").hasRole("ADMIN")
+			
 			.anyRequest().authenticated()
-			.and().csrf().disable()
+			.and()
 			.formLogin()
+			.successHandler(authenticationSuccessHandler)
 			//.loginPage("/login")
-			.failureUrl("/failuer")
-			.defaultSuccessUrl("/home");
+			.failureUrl("/failuer");
+			//.defaultSuccessUrl("/home/welcome");
 	}
 	
 	@Override

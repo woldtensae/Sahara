@@ -1,13 +1,19 @@
 package www.kidscorner.com.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import www.kidscorner.com.domain.User;
+import www.kidscorner.com.service.UserService;
+
 @Controller
 public class WelcomeController {
 	
-
+	@Autowired
+	private UserService userService;
+	
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public String welcome() {
 		return "welcomePage";
@@ -21,6 +27,18 @@ public class WelcomeController {
 
 	@RequestMapping(value = "/reg", method = RequestMethod.GET)
 	public String getRegistration() {
+		User user = new User();
+		user.setUsername("aman");
+		user.setPassword("amanest");
+		
+		
+		User admin = new User();
+		admin.setUsername("henok");
+		admin.setPassword("henokest");
+		
+		
+		userService.saveUser(user, "user");
+		userService.saveUser(admin, "admin");
 		return "reg";
 		
 	}

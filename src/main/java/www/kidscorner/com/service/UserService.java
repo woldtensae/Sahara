@@ -39,8 +39,8 @@ public class UserService implements UserDetailsService{
 	public void saveUser(User user, String roleType) {
 		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		
-		 Role role = roleRepository.findByRoleType(roleType); user.setRoles(new
-		 HashSet<Role>(Arrays.asList(role)));
+		 Role role = roleRepository.findByRoleType(roleType); 
+		 user.setRoles(new HashSet<Role>(Arrays.asList(role)));
 		 
 		userRepository.save(user);
 	}
