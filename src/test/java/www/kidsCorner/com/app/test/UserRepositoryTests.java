@@ -49,6 +49,5 @@ public class UserRepositoryTests {
 		
 		User found = userRepository.findByUsername("kebede");
 		assertEquals(user.getUsername(),found.getUsername());
-		
 	}
 }
