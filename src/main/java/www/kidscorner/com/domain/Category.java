@@ -18,6 +18,8 @@ public class Category {
 	public void setCategoryNmae(String categoryNmae) {
 		this.categoryNmae = categoryNmae;
 	}
-	
-	
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", categoryNmae=" + categoryNmae + "]";
+	}
 }
