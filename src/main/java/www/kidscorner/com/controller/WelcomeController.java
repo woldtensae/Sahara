@@ -37,6 +37,7 @@ public class WelcomeController {
 		LOGGER.info("===========================");
 		LOGGER.info(product.toString());
 		LOGGER.info("===========================");
+		
 	}
 
 	@RequestMapping(value = "/reg", method = RequestMethod.GET)
