@@ -46,13 +46,6 @@ public class WelcomeController {
 		  null,
 		  new ParameterizedTypeReference<List<Product>>(){});
 		List<Product> products = response.getBody();
-		
-		/*
-		 * RestTemplate restTamplate = new RestTemplate(); List<Product> product =
-		 * (List<Product>)
-		 * restTamplate.getForObject("http://localhost:8081/getProducts",
-		 * List<Product>);
-		 */		
 		LOGGER.info("===========================");
 		if(products != null) {
 			LOGGER.info(products.toString());
