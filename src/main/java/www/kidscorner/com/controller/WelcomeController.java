@@ -1,19 +1,12 @@
 package www.kidscorner.com.controller;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.client.RestTemplate;
 
-import www.kidscorner.com.domain.Product;
 import www.kidscorner.com.domain.User;
 import www.kidscorner.com.service.UserService;
 
@@ -26,34 +19,22 @@ public class WelcomeController {
 	
 	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
 	public String welcome() {
+		
+		/*
+		 * RestTemplate restTemplate = new RestTemplate(); ResponseEntity<List<Product>>
+		 * response = restTemplate.exchange( "http://localhost:8081/getProducts",
+		 * HttpMethod.GET, null, new ParameterizedTypeReference<List<Product>>(){});
+		 * List<Product> products = response.getBody();
+		 * LOGGER.info("==========================="); if(products != null) {
+		 * LOGGER.info(products.toString()); }
+		 * LOGGER.info("===========================");
+		 */
 		return "welcomePage";
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String getLogin() {
-
-		return "login";
-	}
 	
-	@RequestMapping("/getProducts")
-	public String getProducts() {
-		
-		
-		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<List<Product>> response = restTemplate.exchange(
-		  "http://localhost:8081/getProducts",
-		  HttpMethod.GET,
-		  null,
-		  new ParameterizedTypeReference<List<Product>>(){});
-		List<Product> products = response.getBody();
-		LOGGER.info("===========================");
-		if(products != null) {
-			LOGGER.info(products.toString());
-		}
-		LOGGER.info("===========================");
-		return "productPage";
-	}
-
+	
+	
 	@RequestMapping(value = "/reg", method = RequestMethod.GET)
 	public String getRegistration() {
 		User user = new User();

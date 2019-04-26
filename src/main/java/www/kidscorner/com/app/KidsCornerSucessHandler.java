@@ -25,6 +25,7 @@ public class KidsCornerSucessHandler implements AuthenticationSuccessHandler{
 		
 		boolean hasUserRole = false;
 		boolean hasAdminRole = false;
+		boolean hasSupplierRole = false;
 		 for (GrantedAuthority grantedAuthority : authorities) {
 			if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
 				hasUserRole = true;
@@ -32,12 +33,17 @@ public class KidsCornerSucessHandler implements AuthenticationSuccessHandler{
 			} else if (grantedAuthority.getAuthority().equals("ROLE_ADMIN")) {
 				hasAdminRole = true;
 				break;
+			} else if (grantedAuthority.getAuthority().equals("ROLE_SUPPLIER")) {
+				hasSupplierRole = true;
+				break;
 			}
 		}
 		if(hasUserRole) {
 			response.sendRedirect("user/welcome");
 		}else if(hasAdminRole) {
 			response.sendRedirect("admin/welcome");
+		}else if(hasSupplierRole) {
+			response.sendRedirect("supplier/welcome");
 		}else {
 			response.sendRedirect("/login");
 		}
