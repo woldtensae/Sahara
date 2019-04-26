@@ -1,4 +1,4 @@
-package www.kidsCorner.com.app.test;
+package www.sahara.com.app.test;
 
 import static org.junit.Assert.assertEquals;
 
@@ -20,10 +20,10 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import www.kidscorner.com.domain.Role;
-import www.kidscorner.com.domain.User;
-import www.kidscorner.com.repository.RoleRepository;
-import www.kidscorner.com.repository.UserRepository;
+import www.sahara.com.domain.Role;
+import www.sahara.com.domain.User;
+import www.sahara.com.repository.RoleRepository;
+import www.sahara.com.repository.UserRepository;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest

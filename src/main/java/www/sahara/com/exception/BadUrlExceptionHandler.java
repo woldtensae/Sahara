@@ -1,4 +1,4 @@
-package www.kidscorner.com.exception;
+package www.sahara.com.exception;
 
 import javax.servlet.http.HttpServletRequest;
 

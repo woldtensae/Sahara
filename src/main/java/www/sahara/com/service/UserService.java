@@ -1,4 +1,4 @@
-package www.kidscorner.com.service;
+package www.sahara.com.service;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -12,11 +12,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import www.kidscorner.com.app.MyUserPrincipal;
-import www.kidscorner.com.domain.Role;
-import www.kidscorner.com.domain.User;
-import www.kidscorner.com.repository.RoleRepository;
-import www.kidscorner.com.repository.UserRepository;
+import www.sahara.com.app.MyUserPrincipal;
+import www.sahara.com.domain.Role;
+import www.sahara.com.domain.User;
+import www.sahara.com.repository.RoleRepository;
+import www.sahara.com.repository.UserRepository;
 
 @Service
 @Transactional

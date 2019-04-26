@@ -1,4 +1,4 @@
-package www.kidscorner.com.controller;
+package www.sahara.com.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import www.kidscorner.com.domain.User;
-import www.kidscorner.com.service.UserService;
+import www.sahara.com.domain.User;
+import www.sahara.com.service.UserService;
 
 @Controller
 public class WelcomeController {

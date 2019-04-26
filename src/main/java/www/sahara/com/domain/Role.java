@@ -1,4 +1,4 @@
-package www.kidscorner.com.domain;
+package www.sahara.com.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

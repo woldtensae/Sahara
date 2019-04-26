@@ -1,4 +1,4 @@
-package www.kidscorner.com.app;
+package www.sahara.com.app;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -15,8 +15,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 @Configuration
-public class KidsCornerSucessHandler implements AuthenticationSuccessHandler{
-	public static final Logger LOGGER = LoggerFactory.getLogger(KidsCornerSucessHandler.class);
+public class SaharaSucessHandler implements AuthenticationSuccessHandler{
+	public static final Logger LOGGER = LoggerFactory.getLogger(SaharaSucessHandler.class);
 	
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,

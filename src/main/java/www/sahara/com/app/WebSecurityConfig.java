@@ -1,4 +1,4 @@
-package www.kidscorner.com.app;
+package www.sahara.com.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +12,8 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
-import www.kidscorner.com.repository.UserRepository;
-import www.kidscorner.com.service.UserService;
+import www.sahara.com.repository.UserRepository;
+import www.sahara.com.service.UserService;
 @Configuration
 @EnableWebSecurity
 @EnableJpaRepositories(basePackageClasses = UserRepository.class)

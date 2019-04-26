@@ -1,4 +1,4 @@
-package www.kidscorner.com.domain;
+package www.sahara.com.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

@@ -1,9 +1,9 @@
-package www.kidscorner.com.repository;
+package www.sahara.com.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import www.kidscorner.com.domain.User;
+import www.sahara.com.domain.User;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Long>{

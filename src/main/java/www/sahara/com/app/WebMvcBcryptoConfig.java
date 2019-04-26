@@ -1,4 +1,4 @@
-package www.kidscorner.com.app;
+package www.sahara.com.app;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

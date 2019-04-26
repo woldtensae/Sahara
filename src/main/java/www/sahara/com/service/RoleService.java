@@ -1,12 +1,12 @@
-package www.kidscorner.com.service;
+package www.sahara.com.service;
 
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import www.kidscorner.com.domain.Role;
-import www.kidscorner.com.repository.RoleRepository;
+import www.sahara.com.domain.Role;
+import www.sahara.com.repository.RoleRepository;
 
 @Service
 @Transactional

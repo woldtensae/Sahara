@@ -1,4 +1,4 @@
-package www.kidscorner.com.app;
+package www.sahara.com.app;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -8,8 +8,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import www.kidscorner.com.domain.Role;
-import www.kidscorner.com.domain.User;
+import www.sahara.com.domain.Role;
+import www.sahara.com.domain.User;
 
 
 public class MyUserPrincipal  implements UserDetails {
